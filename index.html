@@ -757,6 +757,39 @@ body{font-size:var(--fs-b)}
 .cta-two{flex-direction:column;gap:10px;width:100%}
 .cta-two .btn{width:100%;max-width:none;flex:none;min-height:48px;font-size:12.5px;padding-inline:1rem}
 }
+
+/* ================= правки 12: мобильная версия ================= */
+.m-block{display:none}
+@media (max-width:760px){
+:root{--fs-b:12.5px;--fs-d:18.5px}
+/* одинаковый размер: основной 12,5 · выделяющий 18,5 */
+.case .case-top .h2,.case-top .fig-v,.hm-nums .num-v,.cz-card .h3,.pcar-t,.block-title,.about .ab-block>.h3,.about .skill-col .h3{font-size:var(--fs-d)!important}
+.case-top .meta,.case-top .case-lead,.case-top .fig-c,.hm-nums .num-c,.hint,.proof-note,.rubric-text p,.about p,.about li,.cz-card li,.foot,.foot p{font-size:var(--fs-b)!important}
+.cz-card .h3{line-height:1.2}
+.about .ab-block>.h3{line-height:1.2}
+/* Контекст / Задача / Роль — компактно, рядом с картинкой */
+.case-top .meta{align-self:start;display:block!important;gap:0}
+.case-top .meta p{margin:0 0 8px}
+.case-top .meta p:last-child{margin-bottom:0}
+/* раскрывающиеся строки */
+.about .ab{display:flex;flex-direction:column;gap:0}
+.about .ab>.ab-block{margin:0}
+#about-exp{order:1;padding-bottom:22px}
+#about-edu{order:2}
+#about-skills{order:3}
+#about-contact{order:4}
+#about-info{order:5;padding-top:26px}
+#about-city{order:6;display:grid;gap:8px;padding-top:26px}
+#about-city p{margin:0}
+.ab-block.acc{display:block;border-top:1px solid var(--line)}
+#about-contact{border-bottom:1px solid var(--line)}
+.ab-block.acc>.h3{display:flex;justify-content:space-between;align-items:center;margin:0;padding:15px 0;cursor:pointer;user-select:none}
+.ab-block.acc>.h3::after{content:'+';font:400 22px/1 var(--body);color:var(--wine)}
+.ab-block.acc.open>.h3::after{content:'−'}
+.ab-block.acc:not(.open)>:not(h3){display:none}
+.ab-block.acc.open{padding-bottom:18px}
+.contact .item:nth-child(3){display:none}
+}
 </style>
 <main class="view" id="view-home">
 <section class="hm" id="cover">
@@ -913,7 +946,7 @@ body{font-size:var(--fs-b)}
 
 </div>
 
-<div class="ab-block" id="about-edu">
+<div class="ab-block acc" id="about-edu">
 <h3 class="h3">Обучения и курсы</h3>
 <div class="edu-grid">
 <div class="edu-card"><h3>Образование</h3><ul><li>Новосибирский колледж печати и информационных технологий<small>специальность: реклама · 2022 — 2025</small></li></ul></div>
@@ -930,7 +963,7 @@ body{font-size:var(--fs-b)}
 </div>
 </div>
 
-<div class="ab-block" id="about-skills">
+<div class="ab-block acc" id="about-skills">
 <h3 class="h3">Скиллы</h3>
 <div class="skills">
 <div class="skill-col">
@@ -955,13 +988,18 @@ body{font-size:var(--fs-b)}
 </div>
 </div>
 
-<div class="ab-block" id="about-contact">
+<div class="ab-block acc" id="about-contact">
 <h3 class="h3">Как связаться</h3>
 <div class="contact">
 <div class="item"><span class="k">Telegram</span><span class="v">@rassolchikgirl</span><a class="btn" href="https://t.me/rassolchikgirl?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D0%96%D0%B0%D0%BD%D0%BD%D0%B0%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%2C%20%D0%B3%D0%B4%D0%B5%20%D0%BC%D1%8B%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%B5%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D1%88%D0%B8%D1%85%20%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%81%D0%B5%D1%82%D0%B5%D0%B9.%0A%0A%D0%A1%D0%BE%D1%86.%D1%81%D0%B5%D1%82%D0%B8%3A%20%0A%D0%A1%D0%B0%D0%B9%D1%82%3A">написать в телеграм</a></div>
 <div class="item"><span class="k">MAX</span><span class="v">8 961 227 65 79</span><div class="row"><a class="btn" href="https://max.ru/u/f9LHodD0cOLraLXg7LgvYAq_W49XUn8TxjbE5xRLhhK6RDPwK0vlH_v25po" data-msg target="_blank" rel="noopener">написать в макс</a><button class="copy" type="button" data-copy="8 961 227 65 79">Скопировать номер</button></div></div>
 <div class="item"><span class="k">Город</span><span class="v">Новосибирск</span><span class="sub">+4 по Москве</span><p class="note">Беру проекты удалённо и работаю с клиентами из любых городов. Съёмки на месте провожу в Новосибирске.</p></div>
 </div>
+</div>
+<div class="ab-block m-block" id="about-city">
+<h3 class="h3">Город</h3>
+<p><b>Новосибирск</b>, +4 по Москве</p>
+<p>Беру проекты удалённо и работаю с клиентами из любых городов. Съёмки на месте провожу в Новосибирске.</p>
 </div>
 </div>
 </section>
@@ -1093,6 +1131,7 @@ function jumpY(y){instant(function(){window.scrollTo(0,y)})}
 function go(id,noPush){
   var el=document.getElementById(id);
   if(!el) return;
+  if(el.classList&&el.classList.contains('acc'))el.classList.add('open');
   stopVk();
   if(!noPush){trail.push({view:current(),y:window.scrollY});}
   var v=el.closest('.view'), changed=false;
@@ -1374,6 +1413,18 @@ window.addEventListener('scroll',function(){if(rq)return;rq=true;requestAnimatio
 window.addEventListener('resize',function(){layoutReels();fitNav();updateDock()});
 window.addEventListener('load',function(){layoutReels();fitNav();updateDock()});
 if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){fitNav();layoutReels()})}
+
+/* ---------- «Познакомимся» на телефоне: раскрывающиеся строки ---------- */
+$$('.ab-block.acc').forEach(function(b){
+  var h=$('.h3',b);if(!h)return;
+  h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');
+  function tg(){
+    if(!window.matchMedia('(max-width:760px)').matches)return;
+    var o=!b.classList.contains('open');b.classList.toggle('open',o);h.setAttribute('aria-expanded',o?'true':'false');
+  }
+  h.addEventListener('click',tg);
+  h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tg()}});
+});
 
 /* ---------- deep link ---------- */
 function fromHash(){
