@@ -694,6 +694,69 @@ body{font-size:var(--fs-b)}
 .dock.content .btn-nav{flex:1 1 0;max-width:170px}
 @media (max-width:520px){.dock.content{gap:6px;padding-inline:8px}.dock.content .btn{padding-inline:.3rem;font-size:.66rem;letter-spacing:.02em}}
 .reel[data-clone]{pointer-events:auto}
+
+/* ================= правки 11: только мобильная версия ================= */
+.m-only{display:none}
+@media (max-width:760px){:root{--m:calc(100vw/390)}}
+@media (max-width:760px){
+/* --- главная по PDF --- */
+.hm{--m:calc(100vw/390);background:#f4f4f4;padding-top:calc(var(--m)*107);display:flex;flex-direction:column}
+.hm-body{display:contents}
+.hm-right{display:contents}
+.hm-roles{display:none!important}
+.hm-top{order:1;text-align:center;align-self:stretch;margin:0}
+.hm-right h1{font:500 calc(var(--m)*34)/1.17 var(--body);text-align:center;margin:0;color:#690303}
+.hm-tag{font:400 calc(var(--m)*11.5)/1.2 var(--body);text-align:center;margin:calc(var(--m)*1) 0 0;color:#690303;white-space:nowrap}
+.hm-bar{order:2;background:none;height:auto;padding:0 10px;margin-top:calc(var(--m)*65);position:relative}
+.hm-bar-in{display:grid;grid-template-columns:repeat(12,1fr);column-gap:8px;row-gap:13px;width:100%}
+.hm-pills,.hm-pills-r{display:contents}
+.hm-pills .pd:nth-child(1){grid-area:1/1/2/6}
+.hm-pills .pd:nth-child(2){grid-area:1/6/2/10}
+.hm-pills .pd:nth-child(3){grid-area:2/3/3/7}
+.hm-pills .pd:nth-child(4){grid-area:2/7/3/11}
+.hm-pills-r .pd:nth-child(1){grid-area:1/10/2/13}
+.hm-pills-r .pd:nth-child(2){display:none}
+.pd{min-width:0}
+.hm-pill{width:100%;height:32px;font-size:10px;letter-spacing:0;border:2.5px solid #690303;padding:0 4px;white-space:nowrap}
+.hm-pill.hm-out{background:#690303;color:#fff}
+.hm-pill.hm-out b{color:#fff}
+.hm-pill.hm-fill{background:transparent;color:#690303;border-color:#690303;width:100%}
+.hm-pill.hm-fill b{color:#690303}
+.hm-pill.hm-out:hover,.pd.open .hm-pill.hm-out{background:#f4d9d9;color:#690303}
+.pd.open .hm-pill.hm-out b{color:#690303}
+.hm-pill.hm-fill:hover,.pd.open .hm-pill.hm-fill{background:#f4d9d9}
+.hm-pills .pd:nth-child(n) .pd-menu{left:0;right:auto}
+.hm-pills .pd:nth-child(2) .pd-menu,.hm-pills .pd:nth-child(4) .pd-menu,.hm-pills-r .pd .pd-menu{left:auto;right:0}
+.hm-nums{order:3;margin-top:calc(var(--m)*60);padding:0 calc(var(--m)*53)}
+.hm-nums .num-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;gap:calc(var(--m)*34) calc(var(--m)*14)}
+.hm-nums .num:nth-child(n+4){text-align:right}
+.hm-nums .num-v{font-size:calc(var(--m)*26)!important;line-height:1.2}
+.hm-nums .num-c{font-size:12px!important;line-height:1.35;max-width:none;margin-top:2px}
+.hm-nums .num-go{display:none}
+.hm-body{padding:0}
+/* --- общая информация кейсов по PDF --- */
+.case .wrap{padding-inline:16px}
+.case-top{display:grid!important;grid-template-columns:minmax(0,1fr) calc(var(--m)*150);grid-template-rows:auto 1fr auto auto;column-gap:12px;row-gap:0;align-items:start}
+.case-top::after{display:none}
+.case-top>div{display:contents!important}
+.case-top>.phone{grid-column:2;grid-row:1/3;float:none;width:100%;margin:0;justify-self:stretch;align-self:start}
+.case .case-top .h2{grid-column:1;grid-row:1;font-size:calc(var(--m)*18.5)!important;line-height:1.1;margin:0 0 14px;text-wrap:balance;align-self:start}
+.case-top .meta{grid-column:1;grid-row:2;margin:0;font-size:12.5px!important;line-height:1.4;align-self:stretch;display:flex!important;flex-direction:column;justify-content:space-between;gap:8px}
+.case-top .meta p{margin:0}
+.case-top .case-lead{grid-column:1/-1;grid-row:3;margin:18px 0 0;font-size:12.5px!important;line-height:1.4}
+.case-lead p:not(.m-only){display:none}
+.case-lead p.m-only{display:block;margin:0}
+.case-top .figs{grid-column:1/-1;grid-row:4;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 6px;margin:22px 0 0;padding:0}
+.case-top .figs li{max-width:none;min-width:0}
+.case-top .fig-v{font-size:calc(var(--m)*20)!important;line-height:1.15;color:#8a0a0a;white-space:nowrap}
+.case-top .fig-c{font-size:11px!important;line-height:1.3;max-width:none;margin-top:3px}
+.hm-pill.hm-fill b{margin-right:0}
+/* --- кнопки «написать» шире --- */
+.cta3{width:100%;max-width:340px}
+.cta3{justify-items:stretch;margin-top:28px}
+.cta-two{flex-direction:column;gap:10px;width:100%}
+.cta-two .btn{width:100%;max-width:none;flex:none;min-height:48px;font-size:12.5px;padding-inline:1rem}
+}
 </style>
 <main class="view" id="view-home">
 <section class="hm" id="cover">
@@ -705,7 +768,7 @@ body{font-size:var(--fs-b)}
 <div class="pd"><button class="hm-pill hm-out" type="button" aria-expanded="false" aria-haspopup="true"><b>КЕЙС</b> ОДЕЖДА</button><div class="pd-menu" hidden><a href="#case-4" data-go="case-4">общее</a><a href="#case-4-results" data-go="case-4-results">результаты</a><a href="#content-4" data-go="content-4">примеры контента</a></div></div>
 </nav>
 <nav class="hm-pills hm-pills-r" aria-label="О себе">
-<div class="pd"><button class="hm-pill hm-fill" type="button" aria-expanded="false" aria-haspopup="true">ОБО МНЕ</button><div class="pd-menu" hidden><a href="#about-exp" data-go="about-exp">опыт</a><a href="#about-info" data-go="about-info">общая информация</a><a href="#about-edu" data-go="about-edu">обучения и курсы</a><a href="#about-skills" data-go="about-skills">скиллы</a><a href="#about-contact" data-go="about-contact">как связаться</a></div></div>
+<div class="pd"><button class="hm-pill hm-fill" type="button" aria-expanded="false" aria-haspopup="true"><b>ОБО</b> МНЕ</button><div class="pd-menu" hidden><a href="#about-exp" data-go="about-exp">опыт</a><a href="#about-info" data-go="about-info">общая информация</a><a href="#about-edu" data-go="about-edu">обучения и курсы</a><a href="#about-skills" data-go="about-skills">скиллы</a><a href="#about-contact" data-go="about-contact">как связаться</a></div></div>
 <div class="pd"><a class="hm-pill hm-fill" href="#about-contact" data-go="about-contact">КОНТАКТЫ</a></div>
 </nav>
 </div></header>
@@ -723,7 +786,7 @@ body{font-size:var(--fs-b)}
 <figure class="phone"><img src="img/phone1.png" width="360" height="742" alt="Instagram-аккаунт салона ТВОЙТАЙ" loading="lazy" decoding="async"></figure>
 <div>
 <h2 class="h2">(01). КЕЙС, СПА</h2>
-<div class="case-lead"><p>Салон тайского и балийского спа и массажа в Новосибирске зависел от одного канала, Instagram*, который почти не приводил записей. За 9 месяцев без рекламного бюджета в Instagram* просмотры аккаунта выросли в <b>10 раз</b>, взаимодействия в <b>35 раз</b>, а заявки выросли <b>с 5 до 50</b> в месяц.</p><p>Параллельно мы запустили ВКонтакте с <span class="nb">чат-ботом</span>, подключили таргетолога, Яндекс Директ и Метрику: заявки теперь идут из двух каналов и считаются по целям.</p></div>
+<div class="case-lead"><p>Салон тайского и балийского спа и массажа в Новосибирске зависел от одного канала, Instagram*, который почти не приводил записей. За 9 месяцев без рекламного бюджета в Instagram* просмотры аккаунта выросли в <b>10 раз</b>, взаимодействия в <b>35 раз</b>, а заявки выросли <b>с 5 до 50</b> в месяц.</p><p>Параллельно мы запустили ВКонтакте с <span class="nb">чат-ботом</span>, подключили таргетолога, Яндекс Директ и Метрику: заявки теперь идут из двух каналов и считаются по целям.</p><p class="m-only">За 9 месяцев без рекламного бюджета в Instagram* просмотры аккаунта выросли в <b>10 раз</b>, взаимодействия в <b>35 раз</b>, а заявки выросли <b>с 5 до 50</b> в месяц.</p></div>
 <div class="meta"><p><b>Контекст</b>: <span class="nb">спа-салон</span>, тайский и балийский массаж, Новосибирск.</p><p><b>Задача</b>: стабильный поток заявок и загрузка мастеров.</p><p><b>Роль</b>: <span class="nb">СММ-стратег</span>, воронки, контент, съемки, блогеры, сотрудничество с компаниями, курирование дизайнера и таргетолога, аналитика.</p></div>
 <ul class="figs"><li><span class="fig-v">200 000</span><span class="fig-c">просмотры</span></li><li><span class="fig-v">120 000</span><span class="fig-c">просмотров у блогеров</span></li><li><span class="fig-v">+523</span><span class="fig-c">подписчиков</span></li><li><span class="fig-v">х10</span><span class="fig-c">заявок в Instagram*</span></li></ul>
 </div>
@@ -747,7 +810,7 @@ body{font-size:var(--fs-b)}
 <figure class="phone"><img src="img/phone2.png" width="360" height="742" alt="Instagram-аккаунт тревел-проекта Love Camp" loading="lazy" decoding="async"></figure>
 <div>
 <h2 class="h2">(02). КЕЙС, ТРЕВЕЛ</h2>
-<div class="case-lead"><p><span class="nb">Тревел-проект</span> авторских путешествий держался на личной странице основательницы: почти весь охват и подписки шли через соавторства с ней. <br class="dbr">За 6 месяцев почти без рекламного бюджета мы вырастили аккаунт <b>в 2,3 раза</b>, подняли охват в пике <b>до 254 000</b>, а заявки выросли <b>с 23 до 147 в месяц</b>.</p><p>Параллельно постепенно отключали соавторства и искали собственные форматы: в самый сильный месяц рост дали <b>рилсы аккаунта и интеграции с блогерами</b>, а не страница основательницы.</p></div>
+<div class="case-lead"><p><span class="nb">Тревел-проект</span> авторских путешествий держался на личной странице основательницы: почти весь охват и подписки шли через соавторства с ней. <br class="dbr">За 6 месяцев почти без рекламного бюджета мы вырастили аккаунт <b>в 2,3 раза</b>, подняли охват в пике <b>до 254 000</b>, а заявки выросли <b>с 23 до 147 в месяц</b>.</p><p>Параллельно постепенно отключали соавторства и искали собственные форматы: в самый сильный месяц рост дали <b>рилсы аккаунта и интеграции с блогерами</b>, а не страница основательницы.</p><p class="m-only">За 6 месяцев почти без рекламного бюджета мы вырастили аккаунт <b>в 2,3 раза</b>, подняли охват в пике <b>до 254 000</b>, а заявки выросли <b>с 23 до 147</b> в месяц.</p></div>
 <div class="meta"><p><b>Контекст</b>: авторские туры и кэмпы по России и за рубеж, есть кэмпы только для девушек.</p><p><b>Задача</b>: отстроить аккаунт от личного бренда, растить аудиторию и заявки.</p><p><b>Роль</b>: <span class="nb">СММ-стратег</span> — аудит, анализ ЦА и конкурентов, позиционирование, упаковка, контент, сценарии, блогеры, аналитика.</p></div>
 <ul class="figs"><li><span class="fig-v">254 000</span><span class="fig-c">охват за месяц</span></li><li><span class="fig-v">422 000</span><span class="fig-c">просмотров за месяц</span></li><li><span class="fig-v">+786</span><span class="fig-c">подписчиков</span></li><li><span class="fig-v">до 150</span><span class="fig-c">заявок за месяц</span></li></ul>
 </div>
@@ -772,7 +835,7 @@ body{font-size:var(--fs-b)}
 <figure class="phone"><img src="img/phone3.png" width="360" height="742" alt="Instagram-аккаунт издательства настольных игр" loading="lazy" decoding="async"></figure>
 <div>
 <h2 class="h2">(03). КЕЙС, НАСТОЛКИ</h2>
-<div class="case-lead"><p>Издательство настольных игр продавало в основном через Ozon и хотело быстрее разбирать склад в высокий сезон. При этом оно не понимало, какие блогеры реально приводят покупателей. <br class="dbr">Мы запустили Instagram* с дублями в TikTok, YouTube и ВКонтакте, выстроили закупку рекламы и бартер у блогеров и сделали эффект от каждой интеграции видимым. <br class="dbr">По <b>7 играм</b>, которые продвигали через блогеров, заказали на <b>3,67 млн ₽</b>, а одна игра принесла <b>749 тыс. ₽</b>.</p></div>
+<div class="case-lead"><p>Издательство настольных игр продавало в основном через Ozon и хотело быстрее разбирать склад в высокий сезон. При этом оно не понимало, какие блогеры реально приводят покупателей. <br class="dbr">Мы запустили Instagram* с дублями в TikTok, YouTube и ВКонтакте, выстроили закупку рекламы и бартер у блогеров и сделали эффект от каждой интеграции видимым. <br class="dbr">По <b>7 играм</b>, которые продвигали через блогеров, заказали на <b>3,67 млн ₽</b>, а одна игра принесла <b>749 тыс. ₽</b>.</p><p class="m-only">По 7 играм, которые продвигали через блогеров, заказали на <b>3,67 млн ₽</b>, а одна игра принесла <b>749 тыс. ₽</b>.</p></div>
 <div class="meta"><p><b>Контекст</b>: издательство настолок, продажи через Ozon, средний чек игры 4 500 ₽.</p><p><b>Задача</b>: ускорить продажи из наличия и понять, что из рекламы работает.</p><p><b>Роль</b>: <span class="nb">СММ-стратег</span> и закупщик: стратегия, сценарии, подбор блогеров, переговоры и бартер, ТЗ, аналитика, координация команды (контентщик, таргетолог, копирайтер, закупщик, дизайнер).</p></div>
 <ul class="figs"><li><span class="fig-v">3,7 млн</span><span class="fig-c">сумма заказов</span></li><li><span class="fig-v">749 тыс</span><span class="fig-c">выручка с одной игры</span></li><li><span class="fig-v">118 тыс</span><span class="fig-c">просмотров у лучшего рилс</span></li><li><span class="fig-v">+224 %</span><span class="fig-c">рост продаж настолки</span></li></ul>
 </div>
@@ -796,7 +859,7 @@ body{font-size:var(--fs-b)}
 <figure class="phone"><img src="img/phone4.png" width="360" height="742" alt="Telegram-канал магазина Pur Pur Shop" loading="lazy" decoding="async"></figure>
 <div>
 <h2 class="h2">(04). КЕЙС, ОДЕЖДА</h2>
-<div class="case-lead"><p class="kick">Telegram как основной канал продаж: 14 000 подписчиков по ~80 ₽.</p><p>Магазин женской одежды больших размеров в Новосибирске: размеры от 46, вещи из Кореи, Турции и Пекина, <span class="nb">офлайн-точка</span> и <span class="nb">дисконт-магазин</span>. <br class="dbr">За два с лишним года (июнь 2023 — октябрь 2025) мы вырастили канал <b>с 3 800 до 11 000 подписчиков</b> и сделали Telegram основным каналом продаж. <br class="dbr">Рекламой привлекли <b>13 967 подписчиков в среднем по ~80 ₽</b>.</p></div>
+<div class="case-lead"><p class="kick">Telegram как основной канал продаж: 14 000 подписчиков по ~80 ₽.</p><p>Магазин женской одежды больших размеров в Новосибирске: размеры от 46, вещи из Кореи, Турции и Пекина, <span class="nb">офлайн-точка</span> и <span class="nb">дисконт-магазин</span>. <br class="dbr">За два с лишним года (июнь 2023 — октябрь 2025) мы вырастили канал <b>с 3 800 до 11 000 подписчиков</b> и сделали Telegram основным каналом продаж. <br class="dbr">Рекламой привлекли <b>13 967 подписчиков в среднем по ~80 ₽</b>.</p><p class="m-only">Telegram стал основным каналом продаж: за два с лишним года канал вырос <b>с 3 800 до 11 000</b> подписчиков, а рекламой привлекли <b>13 967</b> подписчиков по <b>~80 ₽</b>.</p></div>
 <div class="meta"><p><b>Контекст</b>: магазин женской одежды больших размеров, Новосибирск, онлайн и офлайн, <span class="nb">дисконт-направление</span>, на рынке до 5 лет.</p><p><b>Задача</b>: сделать Telegram главным каналом продаж и растить его на рекламе, не выходя за приемлемую цену подписчика.</p><p><b>Роль</b>: <span class="nb">SMM-специалист</span> и закупщик рекламы.</p></div>
 <ul class="figs"><li><span class="fig-v">14 тыс</span><span class="fig-c">подписчиков привлечено</span></li><li><span class="fig-v">80 ₽</span><span class="fig-c">CPF</span></li><li><span class="fig-v">1,1 млн</span><span class="fig-c">рекламный бюджет</span></li><li><span class="fig-v">от 120 ₽</span><span class="fig-c">CPF в TG ADS</span></li></ul>
 </div>
