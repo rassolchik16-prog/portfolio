@@ -683,6 +683,15 @@ body{font-size:var(--fs-b)}
 #case-3-results .cta-block{margin-top:calc(var(--cu)*64)}
 @media (max-width:760px){#case-3-results .cta-block{margin-top:40px}}
 .about .ab{padding-top:0}
+
+/* ================= правки 8: нижняя панель на страницах примеров ================= */
+.dock .dk-def,.dock .dk-alt{display:contents}
+.dock .dk-alt{display:none}
+.dock.content .dk-def{display:none}
+.dock.content .dk-alt{display:contents}
+.dock.content .btn-nav{flex:1 1 0;max-width:170px}
+@media (max-width:520px){.dock.content{gap:6px;padding-inline:8px}.dock.content .btn{padding-inline:.3rem;font-size:.66rem;letter-spacing:.02em}}
+.reel[data-clone]{pointer-events:auto}
 </style>
 <main class="view" id="view-home">
 <section class="hm" id="cover">
@@ -990,11 +999,11 @@ body{font-size:var(--fs-b)}
 <div class="audit-row"><button class="btn audit-btn" type="button" aria-expanded="false" aria-controls="audit-9">хочу бесплатный аудит соц.сетей</button><button class="back-btn" type="button" data-back>назад</button></div>
 <div class="audit-panel" id="audit-9"><div class="audit-inner"><a class="btn" href="https://t.me/rassolchikgirl?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D0%96%D0%B0%D0%BD%D0%BD%D0%B0%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%2C%20%D0%B3%D0%B4%D0%B5%20%D0%BC%D1%8B%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%B5%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D1%88%D0%B8%D1%85%20%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%81%D0%B5%D1%82%D0%B5%D0%B9.%0A%0A%D0%A1%D0%BE%D1%86.%D1%81%D0%B5%D1%82%D0%B8%3A%20%0A%D0%A1%D0%B0%D0%B9%D1%82%3A">написать в телеграм</a><a class="btn" href="https://max.ru/u/f9LHodD0cOLraLXg7LgvYAq_W49XUn8TxjbE5xRLhhK6RDPwK0vlH_v25po" data-msg target="_blank" rel="noopener">написать в макс</a></div></div>
 
-</div></div></div></section></main><nav class="dock" id="dock" aria-label="Быстрые действия">
+</div></div></div></section></main><nav class="dock" id="dock" aria-label="Быстрые действия"><div class="dk-def">
 <button class="btn btn-line btn-nav" type="button" data-go="cover">Главная</button>
 <a class="btn btn-tg" href="https://t.me/rassolchikgirl?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D0%96%D0%B0%D0%BD%D0%BD%D0%B0%21%0A%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E%2C%20%D0%B3%D0%B4%D0%B5%20%D0%BC%D1%8B%20%D1%80%D0%B0%D0%B7%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%B5%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D1%88%D0%B8%D1%85%20%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D1%81%D0%B5%D1%82%D0%B5%D0%B9.%0A%0A%D0%A1%D0%BE%D1%86.%D1%81%D0%B5%D1%82%D0%B8%3A%20%0A%D0%A1%D0%B0%D0%B9%D1%82%3A">Telegram</a>
 <a class="btn btn-max" href="https://max.ru/u/f9LHodD0cOLraLXg7LgvYAq_W49XUn8TxjbE5xRLhhK6RDPwK0vlH_v25po" data-msg target="_blank" rel="noopener">MAX</a>
-</nav>
+</div><div class="dk-alt" id="dkAlt"></div></nav>
 <div class="toast" id="toast" role="status" hidden></div>
 <div class="lb" id="lb" aria-hidden="true"><button class="lb-x" type="button" aria-label="Закрыть">×</button><img alt=""></div>
 <script>
@@ -1183,10 +1192,37 @@ $$('.post.multi').forEach(function(p){
 
 /* ---------- reels: centred one is bright ---------- */
 var reelSets=$$('.reels').map(function(box){
-  var sc=$('.reel-scroll',box), items=$$('.reel',sc), cnt=$('.reel-count',box), cur=0, tick=false, zoom=box.hasAttribute('data-zoomable');
+  var sc=$('.reel-scroll',box), cnt=$('.reel-count',box), cur=0, tick=false, zoom=box.hasAttribute('data-zoomable');
+  var base=$$('.reel',sc), N=base.length, loop=N>1, ready=false;
+  if(loop){
+    var before=document.createDocumentFragment(), after=document.createDocumentFragment();
+    base.forEach(function(it){
+      var a=it.cloneNode(true),b=it.cloneNode(true);
+      [a,b].forEach(function(c){c.setAttribute('aria-hidden','true');c.setAttribute('data-clone','1')});
+      before.appendChild(a);after.appendChild(b);
+    });
+    sc.insertBefore(before,sc.firstChild);sc.appendChild(after);
+  }
+  var items=$$('.reel',sc);
+  if(loop)cur=N;
   function setActive(i){
     cur=i;items.forEach(function(it,k){it.classList.toggle('active',k===i)});
-    if(cnt) cnt.textContent=(i+1)+' / '+items.length;
+    if(cnt) cnt.textContent=((i%N)+1)+' / '+N;
+  }
+  function center(i,smooth){
+    var it=items[i];
+    sc.scrollTo({left:it.offsetLeft+it.offsetWidth/2-sc.clientWidth/2,behavior:smooth?'smooth':'auto'});
+  }
+  function recenter(){
+    if(!loop||!ready)return;
+    var n=nearest(),t=n;
+    if(n<N)t=n+N;else if(n>=2*N)t=n-N;
+    if(t===n)return;
+    var d=items[t].offsetLeft-items[n].offsetLeft;
+    sc.style.scrollSnapType='none';
+    sc.scrollLeft+=d;
+    cur=t;setActive(t);
+    requestAnimationFrame(function(){sc.style.scrollSnapType=''});
   }
   function nearest(){
     var mid=sc.scrollLeft+sc.clientWidth/2,best=0,bd=1e9;
@@ -1195,17 +1231,17 @@ var reelSets=$$('.reels').map(function(box){
   }
   function to(i){
     i=Math.max(0,Math.min(items.length-1,i));
-    var it=items[i];
-    sc.scrollTo({left:it.offsetLeft+it.offsetWidth/2-sc.clientWidth/2,behavior:'smooth'});
+    center(i,true);
     setActive(i);
   }
   var settle=null;
   sc.addEventListener('scroll',function(){
     clearTimeout(settle);
     settle=setTimeout(function(){
+      recenter();
       if(!curVk)return;var r=curVk.card.closest('.reel');
       if(r&&items.indexOf(r)>=0&&items[cur]!==r)stopVk();
-    },240);
+    },140);
     if(tick)return;tick=true;
     requestAnimationFrame(function(){tick=false;var n=nearest();if(n!==cur)setActive(n)});
   },{passive:true});
@@ -1218,12 +1254,14 @@ var reelSets=$$('.reels').map(function(box){
     if(e.key==='ArrowRight'){e.preventDefault();to(cur+1)}
     if(e.key==='ArrowLeft'){e.preventDefault();to(cur-1)}
   });
-  setActive(0);
+  setActive(loop?N:0);
   return {pad:function(){
     if(!sc.clientWidth||!items.length)return;
     var f=items[0],l=items[items.length-1];
     sc.style.paddingLeft=Math.max(16,(sc.clientWidth-f.offsetWidth)/2)+'px';
     sc.style.paddingRight=Math.max(16,(sc.clientWidth-l.offsetWidth)/2)+'px';
+    if(!ready){ready=true;sc.style.scrollSnapType='none';center(cur,false);requestAnimationFrame(function(){sc.style.scrollSnapType=''})}
+    else if(loop){sc.style.scrollSnapType='none';center(cur,false);requestAnimationFrame(function(){sc.style.scrollSnapType=''})}
   }};
 });
 function layoutReels(){requestAnimationFrame(function(){reelSets.forEach(function(r){r.pad()})})}
@@ -1242,7 +1280,26 @@ function fitNav(){
 }
 
 /* ---------- bottom bar: hidden on the cover and on the navigation page ---------- */
+var dkAlt=$('#dkAlt'), dkView=null;
+function buildAlt(v){
+  dkAlt.innerHTML='';
+  var id=v.id.replace('view-c','');
+  var defs=[['Главная',null,true],['Посты','content-'+id+'-posts'],['Рилс','content-'+id+'-reels'],['Сторис','content-'+id+'-stories']];
+  defs.forEach(function(d){
+    if(d[1]&&!document.getElementById(d[1]))return;
+    var b=document.createElement('button');b.type='button';
+    b.className='btn btn-nav'+(d[2]?' btn-line':'');
+    b.textContent=d[0];
+    if(d[2]){b.setAttribute('data-go','cover')}
+    else{b.addEventListener('click',function(){var t=document.getElementById(d[1]);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})}
+    dkAlt.appendChild(b);
+  });
+}
 function updateDock(){
+  var cv=current();
+  var inContent=cv.id!=='view-home';
+  if(inContent&&dkView!==cv){dkView=cv;buildAlt(cv)}
+  dock.classList.toggle('content',inContent);
   var on=true;
   if(!$('#view-home').hidden){on=navEl.getBoundingClientRect().bottom<window.innerHeight*0.3;}
   dock.classList.toggle('on',on);
